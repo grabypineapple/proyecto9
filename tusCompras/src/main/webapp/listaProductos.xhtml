@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!--
+
+    Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
+
+    This program and the accompanying materials are made available under the
+    terms of the Eclipse Distribution License v. 1.0, which is available at
+    http://www.eclipse.org/org/documents/edl-v10.php.
+
+    SPDX-License-Identifier: BSD-3-Clause
+
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>Lista Productos</title>
+</h:head>
+<h:body>
+	<h1>Lista  Prodductos</h1>
+	<h:dataTable value="#{listaProductosBean.productos}" var="altaproducto"
+		border="3">
+		<h:column>
+			<f:facet name="header">Nombre producto</f:facet>
+			#{altaproducto.prodNombre}
+			</h:column>
+		<h:column>
+			<f:facet name="header">caracteriticas</f:facet>
+			#{altaproducto.prodCaract}
+			</h:column>
+		<h:column>
+			<f:facet name="header">Fecha Alta</f:facet>
+			#{altaproducto.prodFechaAlta}
+			</h:column>
+		<h:column>
+			<f:facet name="header">precio</f:facet>
+			#{altaproducto.prodPrecio}
+			</h:column>
+		<h:column>
+			<f:facet name="header">cantidad producto</f:facet>
+			#{altaproducto.prodCantidad}
+			</h:column>
+		<h:column>
+			<f:facet name="header">provedor</f:facet>
+			#{altaproducto.idProvedor}
+			</h:column>
+		<h:column>
+			<f:facet name="header">Departamento</f:facet>
+			#{altaproducto.idDepto}
+			</h:column>
+		<h:column>
+			<f:facet name="header">Estado producto</f:facet>
+			#{altaproducto.idEdoProd}
+			</h:column>
+	</h:dataTable>
+
+</h:body>
+</html>
+

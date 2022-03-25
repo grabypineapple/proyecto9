@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!--
+
+    Copyright (c) 2018, 2021 Oracle and/or its affiliates. All rights reserved.
+
+    This program and the accompanying materials are made available under the
+    terms of the Eclipse Distribution License v. 1.0, which is available at
+    http://www.eclipse.org/org/documents/edl-v10.php.
+
+    SPDX-License-Identifier: BSD-3-Clause
+
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+	
+	
+<h:head>
+	<title>Alta Producto</title>
+</h:head>
+<h:body>
+	<h:form>
+		
+		<h2>Nombre Producto:</h2>
+		<h:inputText id="prodNombre" title="Nombre Producto: "
+			value="#{productoBean.prodNombre}" required="true"
+			requiredMessage="Error: El nombre es obligatorio." maxlength="25" />
+		
+		
+		<h2>Precio Producto:</h2>
+		<h:inputText id="prodPrecio" title="Precio Producto: "
+			value="#{productoBean.prodPrecio}" required="true"
+			requiredMessage="Error: El precio es obligatorio." />
+		
+		<h2>Cantidad  Producto:</h2>
+		<h:inputText id="prodCantidad" title="Cantidad Producto: "
+			value="#{productoBean.prodCantidad}" required="true"
+			requiredMessage="Error: La cantidad es obligatoria." />	
+			
+			
+		
+		<h2>Caracteristicas Producto:</h2>
+		<h:inputText id="prodCaract" title="Carcateritica Producto: "
+			value="#{productoBean.prodCaract}" required="true"
+			requiredMessage="Error: El nombre es obligatorio." maxlength="25" />
+				 
+         <p>
+         
+         
+         <h2>Fecha Alta:</h2>         	
+			<h:inputText  id="prodFechaAlta" value="#{productoBean.prodFechaAlta}">
+ 			<f:convertDateTime type="prodFechaAlta" pattern="dd/MM/yyyy" />
+		</h:inputText>
+         </p>
+         
+         <p>
+         <h2>Fecha Baja:</h2>         	
+			<h:inputText  id="prodFechaBaja" value="#{productoBean.prodFechaBaja}">
+ 			<f:convertDateTime type="prodFechaBaja" pattern="dd/MM/yyyy" />
+		</h:inputText>
+         </p>
+         
+         
+         
+         
+         <h2>Provedor</h2>
+		<h:selectOneMenu id="idProvedor" value="#{productoBean.idProvedor}" title="Provedor: ">
+			<f:selectItem itemValue="1" itemLabel="1. ABARROTES EL PUMA" />
+			<f:selectItem itemValue="2" itemLabel="2. ABARROTES LA CENTRAL" />
+			<f:selectItem itemValue="3" itemLabel="3. ABARROTES COMERCIAL" />
+			<f:selectItem itemValue="4" itemLabel="4. TUCCENTRAL DE ABASTO" />
+			<f:selectItem itemValue="5" itemLabel="5. DON PEDRO FRUTAS Y VERDURAS" />
+			<f:selectItem itemValue="6" itemLabel="6. CARNES SELECTAS" />			
+			<f:selectItem itemValue="7" itemLabel="7. FARMACIAS GENSEN" />			
+		</h:selectOneMenu>
+		
+		
+		<h2>Departamento</h2>
+		<h:selectOneMenu id="idDepto" value="#{productoBean.idDepto}" title="Departamento: ">
+			<f:selectItem itemValue="1" itemLabel="1. ABARROTES" />
+			<f:selectItem itemValue="2" itemLabel="2. FRUTAS Y VERDURAS" />
+			<f:selectItem itemValue="3" itemLabel="3. PESCADOS" />
+			<f:selectItem itemValue="4" itemLabel="4. VINOS Y LICORES" />
+			<f:selectItem itemValue="5" itemLabel="5. SALCHICHONERIA" />
+			<f:selectItem itemValue="6" itemLabel="6. CARNES " />			
+			<f:selectItem itemValue="7" itemLabel="7. PANADERIA" />
+			<f:selectItem itemValue="8" itemLabel="8. SALCHICHONERIA" />
+			<f:selectItem itemValue="9" itemLabel="9. CARNES " />			
+			<f:selectItem itemValue="10" itemLabel="10. PANADERIA" />					
+			<f:selectItem itemValue="11" itemLabel="11. PANADERIA" />			
+		</h:selectOneMenu>
+		
+		<h2>EstadoProducto</h2>
+		<h:selectOneMenu id="idEdoProd" value="#{productoBean.idEdoProd}" title="Departamento: ">
+			<f:selectItem itemValue="1" itemLabel="1. CON DEFECTO" />
+			<f:selectItem itemValue="2" itemLabel="2. CORRECTO" />
+			<f:selectItem itemValue="3" itemLabel="3. NUEVO" />
+			<f:selectItem itemValue="4" itemLabel="4. CADUCADO" />
+			<f:selectItem itemValue="5" itemLabel="5. NO EXISTE" />
+			<f:selectItem itemValue="6" itemLabel="6. DEVUELTO " />			
+						
+		</h:selectOneMenu>
+		
+		
+		
+		
+		<h:commandButton id="submit" value="Enviar" action="#{productoBean.altaProducto}" />
+		<h:commandButton id="reset" value="Limpiar" type="reset" />
+	</h:form>
+	<div class="messagecolor">
+		<h:messages showSummary="true" showDetail="false"
+			errorStyle="color: red" infoStyle="color: blue" />
+	</div>
+</h:body>
+</html>
